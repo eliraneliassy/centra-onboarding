@@ -1,0 +1,10 @@
+<div>
+  <div class="title">
+    {{book?.title}}
+  </div>
+  <div class="preview-img">
+    <img [src]="book?.imageUrl">
+  </div>
+
+  <button (click)="addToCartHandler()">Add To Cart</button>
+</div>

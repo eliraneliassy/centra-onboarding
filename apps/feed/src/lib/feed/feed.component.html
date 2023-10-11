@@ -1,0 +1,3 @@
+<ng-container *ngIf="feed$ | async as feed">
+  <centra-onboarding-book *ngFor="let book of feed" [book]="book" (addToCart)="addToCart($event)"></centra-onboarding-book>
+</ng-container>

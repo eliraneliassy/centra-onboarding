@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@akamai/books": ["apps/books/src/index.ts"],
+      "@akamai/cart": ["apps/cart/src/index.ts"],
+      "@akamai/cart-state": ["apps/cart-state/src/index.ts"],
+      "@akamai/feed": ["apps/feed/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
