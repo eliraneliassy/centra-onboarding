@@ -1,7 +1,9 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Book, BookComponent} from "@akamai/books";
-import {CartStateService} from "@akamai/cart-state";
+// import {CartStateService} from "@akamai/cart-state";
+import {Observable} from "rxjs";
+import {CartQuery} from "@akamai/cart-state";
 
 @Component({
   selector: 'centra-onboarding-cart',
@@ -12,11 +14,14 @@ import {CartStateService} from "@akamai/cart-state";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent implements  OnInit{
-  cart: Book[] = [];
-  cartService: CartStateService = inject(CartStateService);
+  cart$!: Observable<Book[]>;
+  // cartService: CartStateService = inject(CartStateService);
+  cartQuery = inject(CartQuery);
 
   ngOnInit(): void {
-    this.cart = this.cartService.cartState;
+    // this.cartService.getCart().subscribe((cart) => this.cart = cart)
+    // this.cart$ = this.cartService.getCart();
+    this.cart$ = this.cartQuery.selectCart$;
   }
 
 

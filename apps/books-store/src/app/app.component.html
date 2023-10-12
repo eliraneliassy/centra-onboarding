@@ -5,6 +5,6 @@
     <a routerLink="feed">feed</a>
     <a routerLink="cart">cart</a>
   </div>
-  # of items in cart: NUMBER
+  # of items in cart: {{numberOfItemsInCart$ | async}}
 </div>
 <router-outlet></router-outlet>
